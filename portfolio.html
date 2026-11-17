@@ -8,8 +8,23 @@
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime&display=block" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<script>
+  document.documentElement.classList.add('fonts-loading');
+  (function () {
+    var done = function () { document.documentElement.classList.remove('fonts-loading'); };
+    if (document.fonts && document.fonts.load) {
+      Promise.all([
+        document.fonts.load('400 1em "Beth Ellen"'),
+        document.fonts.load('400 1em "Cormorant Garamond"'),
+        document.fonts.load('italic 400 1em "Cormorant Garamond"'),
+        document.fonts.load('400 1em "Courier Prime"')
+      ]).then(done, done);
+      setTimeout(done, 2500);
+    } else { done(); }
+  })();
+</script>
 </head>
 <body>
 

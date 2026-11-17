@@ -444,3 +444,7 @@ section:has(> .folders) + .cta .flourish { margin-top: 20px; }
 .approach-watch.inline:hover { border-bottom-color: var(--blue-ink); }
 .approach-watch.inline { white-space: nowrap; }
 @media (max-width: 600px) { .approach-watch.inline { font-size: 10px; letter-spacing: .1em; } }
+
+/* smooth font loading: hold text until the brand fonts are ready */
+.hero-copy, .page-intro, header .brand { transition: opacity .5s ease; }
+.fonts-loading .hero-copy, .fonts-loading .page-intro, .fonts-loading header .brand { opacity: 0; }
