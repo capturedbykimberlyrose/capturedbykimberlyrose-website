@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camcorder Diaries | Captured by Kimberly Rose</title>
+<meta name="description" content="Vintage camcorder footage from Captured by Kimberly Rose: the warm, home-video feel in action.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="index.html">Captured by Kimberly Rose</a>
+    <ul class="links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#packages">Packages</a></li>
+      <li><a href="index.html#inquire">Inquire</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="page-intro">
+    <div class="wrap reveal">
+      <a class="back-link" href="portfolio.html">&larr; All work</a>
+      <p class="eyebrow">Shot on vintage camcorder</p>
+      <h2>Camcorder <span class="script" style="display:inline">diaries</span></h2>
+      <p class="lede" style="margin: 0 auto;">A few of my own memories, captured the way I capture yours: warm, grainy and full of feeling. Tap the speaker to turn the sound on.</p>
+    </div>
+  </section>
+
+  <section class="diary-section">
+    <div class="wrap diary reveal">
+      <p class="diary-caption"><span class="diary-title">Yosemite</span><span class="diary-meta">June 2025</span></p>
+      <div class="feature diary-video">
+        <video src="assets/cc-yosemite.mp4" poster="assets/cc-yosemite.jpg" autoplay muted loop controls playsinline preload="metadata" aria-label="Camcorder footage from a trip to Yosemite"></video>
+      </div>
+    </div>
+    <div class="wrap diary reveal">
+      <p class="diary-caption"><span class="diary-title">Disneyland</span><span class="diary-meta">October 2025</span></p>
+      <div class="feature diary-video">
+        <video src="assets/cc-disneyland.mp4" poster="assets/cc-disneyland.jpg" autoplay muted loop controls playsinline preload="metadata" aria-label="Camcorder footage from a day at Disneyland"></video>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap reveal">
+      <div class="flourish"></div>
+      <h2>Let's capture <span class="script">your day</span></h2>
+      <a class="btn solid" href="index.html#inquire">Inquire</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo.png" alt="Captured by Kimberly Rose">
+    <div class="contact">
+      <a href="mailto:capturedbykimberlyrose@gmail.com">capturedbykimberlyrose@gmail.com</a>
+      <a href="https://www.instagram.com/capturedbykimberlyrose/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@capturedbykimberlyrose" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <small>Southern California · Available for travel worldwide · © <span id="yr">2026</span> Captured by Kimberly Rose</small>
+  </div>
+</footer>
+
+<script>
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const toTop = () => { if (!location.hash) { window.scrollTo({ top: 0, behavior: 'instant' }); try { document.body.scrollIntoView({ block: 'start', behavior: 'instant' }); } catch (e) {} } };
+  toTop(); window.addEventListener('load', toTop); window.addEventListener('pageshow', toTop);
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+</script>
+</body>
+</html>

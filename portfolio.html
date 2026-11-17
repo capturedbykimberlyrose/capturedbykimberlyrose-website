@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio | Captured by Kimberly Rose</title>
+<meta name="description" content="More day-of content from Captured by Kimberly Rose: weddings and celebrations on iPhone and vintage camcorder.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="index.html">Captured by Kimberly Rose</a>
+    <ul class="links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#packages">Packages</a></li>
+      <li><a href="index.html#inquire">Inquire</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="page-intro">
+    <div class="wrap reveal">
+      <p class="eyebrow">Portfolio</p>
+      <h2>More moments, <span class="script">captured</span></h2>
+      <p class="lede" style="margin: 0 auto;">A collection of weddings and celebrations, shot on iPhone and vintage camcorder.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 30px;">
+    <div class="wrap reveal">
+      <a class="feature feature-link" href="camcorder-diaries.html">
+        <video src="assets/cc-highlight.mp4" poster="assets/cc-highlight.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vintage camcorder footage from a Yosemite trip"></video>
+        <span class="feature-label"><span class="feature-eyebrow">Shot on vintage camcorder</span><span class="feature-title">Camcorder diaries</span><span class="feature-cta">Watch with sound &rarr;</span></span>
+      </a>
+    </div>
+
+    <div class="wrap folders">
+      <a class="folder reveal" href="megan-and-lucas.html">
+        <span class="folder-tab">La Jolla, CA</span>
+        <span class="folder-body">
+          <span class="folder-cover"><img src="assets/megan-lucas-cover.jpg" alt="Megan and Lucas sharing a kiss at sunset above La Jolla Shores" loading="lazy" style="object-position: 50% 58%;"></span>
+          <span class="folder-title">Megan &amp; Lucas</span>
+          <span class="folder-meta">Wedding · La Jolla, California</span>
+        </span>
+      </a>
+      <a class="folder reveal" href="camcorder-diaries.html">
+        <span class="folder-tab">Camcorder</span>
+        <span class="folder-body">
+          <span class="folder-cover"><img src="assets/cc-cover.jpg" alt="Couple walking hand in hand on a boardwalk through a Yosemite meadow" loading="lazy"></span>
+          <span class="folder-title">Camcorder Diaries</span>
+          <span class="folder-meta">Yosemite · Disneyland</span>
+        </span>
+      </a>
+      <a class="folder reveal" href="fairy-garden-party.html">
+        <span class="folder-tab">Oahu, HI</span>
+        <span class="folder-body">
+          <span class="folder-cover"><img src="assets/fg-cover.jpg" alt="Overhead view of a fairy garden birthday table with a floral cake, pasta and candles" loading="lazy"></span>
+          <span class="folder-title">Fairy Garden Party</span>
+          <span class="folder-meta">25th birthday · Oahu, Hawaii</span>
+        </span>
+      </a>
+      <a class="folder reveal" href="fancy-nancy-party.html">
+        <span class="folder-tab">Oahu, HI</span>
+        <span class="folder-body">
+          <span class="folder-cover"><img src="assets/fn-cover.jpg" alt="Birthday girl in a paper crown and flower lei blowing kisses with two friends" loading="lazy"></span>
+          <span class="folder-title">Fancy Nancy Party</span>
+          <span class="folder-meta">26th birthday · Oahu, Hawaii</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap reveal">
+      <div class="flourish"></div>
+      <h2>Let's capture <span class="script">your day</span></h2>
+      <a class="btn solid" href="index.html#inquire">Inquire</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo.png" alt="Captured by Kimberly Rose">
+    <div class="contact">
+      <a href="mailto:capturedbykimberlyrose@gmail.com">capturedbykimberlyrose@gmail.com</a>
+      <a href="https://www.instagram.com/capturedbykimberlyrose/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@capturedbykimberlyrose" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <small>Southern California · Available for travel worldwide · © <span id="yr">2026</span> Captured by Kimberly Rose</small>
+  </div>
+</footer>
+
+<script>
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const toTop = () => { if (!location.hash) { window.scrollTo({ top: 0, behavior: 'instant' }); try { document.body.scrollIntoView({ block: 'start', behavior: 'instant' }); } catch (e) {} } };
+  toTop(); window.addEventListener('load', toTop); window.addEventListener('pageshow', toTop);
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

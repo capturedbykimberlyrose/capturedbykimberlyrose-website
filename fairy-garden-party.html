@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fairy Garden Party, Oahu | Captured by Kimberly Rose</title>
+<meta name="description" content="Day-of content from a 25th birthday fairy garden party in Oahu, Hawaii, by Captured by Kimberly Rose.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="index.html">Captured by Kimberly Rose</a>
+    <ul class="links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#packages">Packages</a></li>
+      <li><a href="index.html#inquire">Inquire</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="page-intro">
+    <div class="wrap reveal">
+      <a class="back-link" href="portfolio.html">&larr; All work</a>
+      <p class="eyebrow">25th birthday · Oahu, Hawaii · January 2025</p>
+      <h2>Fairy garden <span class="script" style="display:inline">party</span></h2>
+    </div>
+  </section>
+
+  <section style="padding-top: 30px;">
+    <div class="wrap strip-head reveal">
+      <p class="eyebrow">Scroll the moments</p>
+      <div class="strip-arrows">
+        <button class="strip-btn" data-dir="-1" aria-label="Scroll left">&larr;</button>
+        <button class="strip-btn" data-dir="1" aria-label="Scroll right">&rarr;</button>
+      </div>
+    </div>
+    <div class="wrap reel-strip" id="strip">
+      <div class="reel-wrap reveal">
+        <div class="reel has-media">
+          <video src="assets/fg-highlights.mp4" poster="assets/fg-highlights.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Fairy garden birthday table with flower crowns, champagne and a floral cake"></video>
+          <div class="overlay"><span>JAN 2025 · OAHU, HI</span></div>
+        </div>
+        <p class="reel-caption">The celebration</p>
+      </div>
+      <div class="reel-wrap reveal">
+        <div class="reel has-media">
+          <video src="assets/fg-sunset.mp4" poster="assets/fg-sunset.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Birthday girl in a flower crown spraying champagne at sunset on the beach"></video>
+          <div class="overlay"><span>JAN 2025 · OAHU, HI</span></div>
+        </div>
+        <p class="reel-caption">Sunset champagne</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap reveal">
+      <div class="flourish"></div>
+      <h2>Let's capture <span class="script">your day</span></h2>
+      <a class="btn solid" href="index.html#inquire">Inquire</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo.png" alt="Captured by Kimberly Rose">
+    <div class="contact">
+      <a href="mailto:capturedbykimberlyrose@gmail.com">capturedbykimberlyrose@gmail.com</a>
+      <a href="https://www.instagram.com/capturedbykimberlyrose/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@capturedbykimberlyrose" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <small>Southern California · Available for travel worldwide · © <span id="yr">2026</span> Captured by Kimberly Rose</small>
+  </div>
+</footer>
+
+<script>
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const toTop = () => { if (!location.hash) { window.scrollTo({ top: 0, behavior: 'instant' }); try { document.body.scrollIntoView({ block: 'start', behavior: 'instant' }); } catch (e) {} } };
+  toTop(); window.addEventListener('load', toTop); window.addEventListener('pageshow', toTop);
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const strip = document.getElementById('strip');
+  document.querySelectorAll('.strip-btn').forEach(btn => btn.addEventListener('click', () => {
+    const item = strip.querySelector('.reel-wrap');
+    const step = item ? item.getBoundingClientRect().width + 28 : 300;
+    strip.scrollBy({ left: step * Number(btn.dataset.dir), behavior: 'smooth' });
+  }));
+  const updateArrows = () => {
+    const max = strip.scrollWidth - strip.clientWidth - 2;
+    document.querySelector('[data-dir="-1"]').disabled = strip.scrollLeft <= 2;
+    document.querySelector('[data-dir="1"]').disabled = strip.scrollLeft >= max;
+  };
+  strip.addEventListener('scroll', updateArrows, { passive: true });
+  window.addEventListener('resize', updateArrows); updateArrows();
+</script>
+</body>
+</html>
